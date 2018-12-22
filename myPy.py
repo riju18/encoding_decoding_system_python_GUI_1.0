@@ -20,10 +20,15 @@ def binTostr():
     output.insert(END, result)
 
 
-textBtn = Button(window, text='text', command=binTostr)
+def strToBin():
+    getVal = inp.get()
+    result = ' '.join(format(ord(i), 'b') for i in getVal)
+    output.insert(END, result)
+
+textBtn = Button(window, text='text', command=binTostr)   # complete
 textBtn.grid(row=0, column=1, padx=10, pady=5)
 
-binBtn = Button(window, text='bin')
+binBtn = Button(window, text='bin', command=strToBin)  # complete
 binBtn.grid(row=1, column=1, padx=0, pady=5)
 
 decBtn = Button(window, text='dec')
